@@ -93,3 +93,20 @@ function matchWords() {
     return false;
   }
 }
+
+// Pick and show random word
+function showWord(words) {
+  const randIndex = Math.floor(Math.random() * words.length);
+  currentWord.innerHTML = words[randIndex];
+}
+
+// Countdown timer
+function countdown() {
+  if (time > 0) {
+    time--;
+  } else if (time === 0) {
+    isPlaying = false;
+  }
+
+  timeDisplay.innerHTML = time;
+}
