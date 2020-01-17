@@ -8,3 +8,13 @@ const levels = {
   medium: 3,
   hard: 1
 };
+
+// to change level
+const currentLevel = levels.medium;
+
+let time = currentLevel;
+let score = 0;
+let isPlaying;
+
+// DOM Elements
+const wordInput = document.querySelector("#word-input");
