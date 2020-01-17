@@ -82,3 +82,14 @@ function startMatch() {
     scoreDisplay.innerHTML = score;
   }
 }
+
+// Match currentWord to wordInput
+function matchWords() {
+  if (wordInput.value === currentWord.innerHTML) {
+    message.innerHTML = "Correct!!!";
+    return true;
+  } else {
+    message.innerHTML = "";
+    return false;
+  }
+}
