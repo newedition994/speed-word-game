@@ -51,3 +51,34 @@ const words = [
   "space",
   "definition"
 ];
+
+// Initialize Game
+function init() {
+  seconds.innerHTML = currentLevel;
+
+  showWord(words);
+
+  wordInput.addEventListener("input", startMatch);
+
+  setInterval(countdown, 1000);
+
+  setInterval(checkStatus, 50);
+}
+
+// Start Match
+function startMatch() {
+  if (matchWords()) {
+    isPlaying = true;
+    time = currentLevel + 1;
+    showWord(words);
+    wordInput.value = "";
+    score++;
+  }
+
+  // If score is -1, display 0
+  if (score === -1) {
+    scoreDisplay.innerHTML = 0;
+  } else {
+    scoreDisplay.innerHTML = score;
+  }
+}
